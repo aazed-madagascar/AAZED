@@ -10,11 +10,7 @@
             --marron: #5c4633;
             --vert: #4a7043;
         }
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.8;
@@ -247,27 +243,36 @@
             margin-top: 10px;
         }
 
-        /* Bouton Facebook */
-        .facebook-btn {
+        /* Boutons Contact améliorés */
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .contact-btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 30px;
-            background: #1877F2;
-            color: white;
-            text-decoration: none;
+            padding: 14px 32px;
             border-radius: 8px;
+            text-decoration: none;
             font-weight: 500;
+            font-size: 1.05rem;
             transition: all 0.3s;
-            margin-top: 15px;
         }
-        .facebook-btn:hover {
-            background: #0e5fd8;
-            transform: translateY(-2px);
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
         }
-        .facebook-btn svg {
-            width: 24px;
-            height: 24px;
+        .call-btn {
+            background: #007AFF;
+            color: white;
+        }
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.25);
         }
 
         @media (max-width: 768px) {
@@ -290,9 +295,6 @@
                 <li><a href="#savoir-faire">Savoir-faire</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div>
-                <a href="https://wa.me/261389577769" target="_blank" style="color:#25D366; font-weight:600;">WhatsApp</a>
-            </div>
         </nav>
     </header>
 
@@ -475,24 +477,31 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" style="background: #111; color: #ddd; text-align: center; padding: 100px 40px;">
+    <!-- CONTACT - Amélioré avec boutons Appel + WhatsApp -->
+    <section id="contact" style="background: #111; color: #ddd; text-align: center; padding: 120px 40px;">
         <h2 style="color:white;">Prêt à commander ?</h2>
-        <p style="font-size:1.3rem; max-width:700px; margin:0 auto 30px;">
+        <p style="font-size:1.3rem; max-width:700px; margin:0 auto 40px;">
             Contactez-nous pour des commandes locales ou internationales
         </p>
-        <p>Email : <strong>contact.aazed@gmail.com</strong></p>
-        
-        <!-- Bouton WhatsApp avec ton numéro -->
-        <a href="https://wa.me/261389577769" target="_blank" class="whatsapp-btn" style="margin: 20px 10px;">
-            📱 Commander sur WhatsApp
-        </a>
-        
+        <p style="margin-bottom: 40px;">Email : <strong>contact.aazed@gmail.com</strong></p>
+
+        <div class="contact-buttons">
+            <!-- Bouton WhatsApp -->
+            <a href="https://wa.me/261389577769" target="_blank" class="contact-btn whatsapp-btn">
+                📱 Commander sur WhatsApp
+            </a>
+
+            <!-- Bouton Appel Téléphonique -->
+            <a href="tel:+261389577769" class="contact-btn call-btn">
+                📞 Appeler maintenant
+            </a>
+        </div>
+
         <!-- Bouton Facebook -->
         <a href="https://www.facebook.com/profile.php?id=100093718592100" 
            target="_blank" 
-           class="facebook-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+           style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 30px; background: #1877F2; color: white; text-decoration: none; border-radius: 8px; margin-top: 30px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
             </svg>
             Suivez-nous sur Facebook
