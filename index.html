@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZZED - Créations en Raphia Fait Main à Madagascar</title>
+    <style>
+        :root {
+            --beige: #f5f0e8;
+            --marron: #5c4633;
+            --vert: #4a7043;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
+            line-height: 1.8; 
+            color: #333; 
+            background: #fff; 
+            scroll-behavior: smooth;   /* Scroll fluide */
+        }
+
+        header {
+            position: fixed; 
+            top: 0; 
+            width: 100%; 
+            background: rgba(255,255,255,0.95);
+            border-bottom: 1px solid #eee; 
+            z-index: 1000;
+        }
+        nav {
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 18px 40px;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+        }
+        .logo { 
+            font-size: 28px; 
+            font-weight: 700; 
+            letter-spacing: 3px; 
+            color: var(--marron); 
+        }
+        .menu { 
+            display: flex; 
+            gap: 35px; 
+            list-style: none; 
+        }
+        .menu a { 
+            text-decoration: none; 
+            color: #333; 
+            font-weight: 500; 
+        }
+        .menu a:hover { color: var(--vert); }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)), url('pdc.jpg') center/cover no-repeat;
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            color: white;
+        }
+        .hero-content h1 { 
+            font-size: 4.5rem; 
+            margin-bottom: 20px; 
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7); 
+        }
+        .hero-content p { 
+            font-size: 1.65rem; 
+            max-width: 720px; 
+            margin: 0 auto 40px; 
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6); 
+        }
+        .btn {
+            padding: 16px 45px; 
+            background: white; 
+            color: var(--marron); 
+            text-decoration: none;
+            font-weight: 600; 
+            border: 2px solid white; 
+            transition: all 0.4s;
+        }
+        .btn:hover { 
+            background: transparent; 
+            color: white; 
+        }
+
+        section { 
+            padding: 100px 40px; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+        h2 { 
+            font-size: 2.8rem; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            color: var(--marron); 
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        /* À PROPOS & SAVOIR-FAIRE */
+        .about, .savoir-faire {
+            background: var(--beige);
+        }
+        .two-columns {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        .text-column { flex: 1; min-width: 300px; }
+        .image-column { flex: 1; min-width: 300px; }
+        .image-column img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* NOS CRÉATIONS - Grille principale */
+        .products-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 40px;
+        }
+        .product-card {
+            background: white; 
+            border: 1px solid #eee; 
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        .product-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 25px;
+            text-align: center;
+        }
+        .product-info h3 {
+            font-size: 1.45rem;
+            margin-bottom: 10px;
+            color: var(--marron);
+        }
+        .product-info p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .product-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--marron);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .product-btn:hover {
+            background: #3f2a20;
+        }
+
+        /* SECTIONS DÉTAILLÉES (Sacs, Chapeaux, Accessoires) */
+        .category-section {
+            padding-top: 80px;
+            padding-bottom: 100px;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .item-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        .item-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        .item-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .whatsapp-btn-small {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .two-columns {
+                gap: 40px;
+            }
+            .text-column, .image-column { order: 1; }
+            .image-column { order: 2; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <div class="logo">AAZED</div>
+            <ul class="menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#produits">Nos Créations</a></li>
+                <li><a href="#savoir-faire">Savoir-faire</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div>
+                <a href="https://wa.me/261XXXXXXXXX" target="_blank" style="color:#25D366; font-weight:600;">WhatsApp</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>AAZED</h1>
+            <p>Créations artisanales en raphia fait main à Madagascar<br>
+            Sacs • Chapeaux • Accessoires • Naturel & Authentique</p>
+            <a href="#produits" class="btn">Découvrir nos collections</a>
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="a-propos" class="about">
+        <h2>AZZED – L’Art du Raphia Malgache</h2>
+        <div class="two-columns">
+            <div class="text-column">
+                <p style="font-size:1.25rem;">
+                    AZZED est une marque artisanale basée à Madagascar spécialisée dans la création de sacs, 
+                    chapeaux et accessoires en raphia faits main.
+                </p>
+                <br>
+                <p style="font-size:1.25rem;">
+                    Chaque pièce est fabriquée avec passion par des artisans malgaches, dans le respect 
+                    de la tradition et de l’environnement.
+                </p>
+            </div>
+            <div class="image-column">
+                <img src="artisan.jpg" alt="Artisan malgache travaillant le raphia">
+            </div>
+        </div>
+    </section>
+
+    <!-- NOS CRÉATIONS (Grille principale) -->
+    <section id="produits">
+        <h2>Nos Créations</h2>
+        <p class="subtitle">Découvrez nos pièces uniques, entièrement faites main avec du raphia naturel de Madagascar</p>
+        
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="sac1.jpg" alt="Sacs en raphia">
+                <div class="product-info">
+                    <h3>Sacs en Raphia</h3>
+                    <p>Modèles élégants et spacieux</p>
+                    <a href="#sacs" class="product-btn">Découvrir</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="chapeau1.jpg" alt="Chapeaux en raphia">
+                <div class="product-info">
+                    <h3>Chapeaux Artisanaux</h3>
+                    <p>Protection solaire chic</p>
+                    <a href="#chapeaux" class="product-btn">Découvrir</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="accessoire.jpg" alt="Accessoires en raphia">
+                <div class="product-info">
+                    <h3>Accessoires Naturels</h3>
+                    <p>Portefeuilles, trousses...</p>
+                    <a href="#accessoires" class="product-btn">Découvrir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION DÉTAILLÉE : SACS -->
+    <section id="sacs" class="category-section">
+        <h2>Sacs en Raphia</h2>
+        <p class="subtitle">Collection de sacs faits main – élégants, résistants et uniques</p>
+        <div class="category-grid">
+            <div class="item-card"><img src="sac-1.jpg" alt="Sac 1"><div class="item-info"><h4>Sac Filet</h4><p class="subtitle">Taille: 40cm X 40cm <br>Anses en CUIR</br></p> <a href="https://wa.me/261XXXXXXXXX" class="whatsapp-btn-small">Commander sur WhatsApp</a></div></div>
+            <div class="item-card"><img src="sacfleur.jpg" alt="Sac 2"><div class="item-info"><h4>Sac Fleur</h4><a href="https://wa.me/261XXXXXXXXX" class="whatsapp-btn-small">Commander sur WhatsApp</a></div></div>
+            <div class="item-card"><img src="sac-3.jpg" alt="Sac 3"><div class="item-info"><h4>Sac Mahajanga</h4><a href="https://wa.me/261XXXXXXXXX" class="whatsapp-btn-small">Commander sur WhatsApp</a></div></div>
+            <div class="item-card"><img src="sacfleur2.jpg" alt="Sac 4"><div class="item-info"><h4>Sac Fleur_002</h4><a href="https://wa.me/261XXXXXXXXX" class="whatsapp-btn-small">Commander sur WhatsApp</a></div></div>
+        </div>
+    </section>
+
+    <!-- SECTION DÉTAILLÉE : CHAPEAUX -->
+    <section id="chapeaux" class="category-section">
+        <h2>Chapeaux Artisanaux</h2>
+        <p class="subtitle">Chapeaux en raphia naturel – protection et élégance</p>
+        <div class="category-grid">
+            <div class="item-card"><img src="modi.jpeg" alt="Chapeau 1"><div class="item-info"><h4>Chapeau Soleil</h4><a href="https://wa.me/261XXXXXXXXX" class="whatsapp-btn-small">Commander sur WhatsApp</a></div></div>
+            <div class="item-card"><img src="chapeau-2.jpg" alt="Chapeau 2"><div class="item-info"><h4>Chapeau Fedora</h4><a href="https://wa.me/261XXXXXXXXX" class="whatsapp-btn-small">Commander sur WhatsApp</a></div></div>
+            <div class="item-card"><img src="chapeau-3.jpg" alt="Chapeau 3"><div class="item-info"><h4>Chapeau Panama</h4><a href="https://wa.me/261XXXXXXXXX" class="whatsapp-btn-small">Commander sur WhatsApp</a></div></div>
+        </div>
+    </section>
+
+    <!-- SECTION DÉTAILLÉE : ACCESSOIRES -->
+    <section id="accessoires" class="category-section">
+        <h2>Accessoires Naturels</h2>
+        <p class="subtitle">Petits objets raffinés en raphia</p>
+        <div class="category-grid">
+            <div class="item-card"><img src="accessoire-1.jpg" alt="Accessoire 1"><div class="item-info"><h4>Trousse Nomade</h4><a href="https://wa.me/261XXXXXXXXX" class="whatsapp-btn-small">Commander sur WhatsApp</a></div></div>
+            <div class="item-card"><img src="accessoire-2.jpg" alt="Accessoire 2"><div class="item-info"><h4>Portefeuille</h4><a href="https://wa.me/261XXXXXXXXX" class="whatsapp-btn-small">Commander sur WhatsApp</a></div></div>
+            <div class="item-card"><img src="accessoire-3.jpg" alt="Accessoire 3"><div class="item-info"><h4>Ceinture Tressée</h4><a href="https://wa.me/261XXXXXXXXX" class="whatsapp-btn-small">Commander sur WhatsApp</a></div></div>
+        </div>
+    </section>
+
+    <!-- SAVOIR-FAIRE -->
+    <section id="savoir-faire" class="savoir-faire">
+        <h2>Notre Savoir-Faire</h2>
+        <div class="two-columns">
+            <div class="text-column">
+                <p style="font-size:1.25rem;">
+                    Chaque création AAZED est <strong>100% faite main</strong> à Madagascar.
+                </p>
+                <br>
+                <p style="font-size:1.22rem;">
+                    Nos artisans sélectionnent avec soin la fibre de raphia naturelle, 
+                    puis la transforment à l’aide de techniques traditionnelles de tissage et de crochet.
+                </p>
+            </div>
+            <div class="image-column">
+                <img src="processus.jpg" alt="Processus artisanal de fabrication du raphia">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2 style="color:white;">Prêt à commander ?</h2>
+        <p style="font-size:1.3rem; max-width:700px; margin:0 auto 30px;">
+            Contactez-nous pour des commandes locales ou internationales
+        </p>
+        <p>Email : <strong>contact.aazed@gmail.com</strong></p>
+        <a href="https://wa.me/261XXXXXXXXX" target="_blank" class="whatsapp-btn">📱 Commander sur WhatsApp</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 AZZED - Créations en Raphia Fait Main à Madagascar 🇲🇬</p>
+    </footer>
+
+</body>
+</html>
