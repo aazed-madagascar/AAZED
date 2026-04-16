@@ -314,11 +314,11 @@
 
     <!-- À PROPOS -->
     <section id="a-propos" class="about">
-        <h2>AAZED – L’Art du Raphia Malgache</h2>
+        <h2>AAZED. – L’Art du Raphia Malgache</h2>
         <div class="two-columns">
             <div class="text-column">
                 <p style="font-size:1.25rem;">
-                    AAZED est une marque artisanale basée à Madagascar spécialisée dans la création de sacs,
+                    AAZED. est une marque artisanale basée à Madagascar spécialisée dans la création de sacs,
                     chapeaux et accessoires en raphia faits main.
                 </p>
                 <br>
@@ -435,13 +435,47 @@
         </div>
     </section>
 
+    <!-- === NOUVELLE SECTION AVIS CLIENTS (ajoutée ici) === -->
+    <section id="avis" class="category-section" style="background: var(--beige);">
+        <h2>Avis Clients</h2>
+        <p class="subtitle">Ce que nos clients disent de nos créations en raphia</p>
+        <div class="products-grid">
+            <div class="product-card" style="text-align:center; padding:30px 20px;">
+                <h4>Rabea</h4>
+                <p style="color:#f5c400; font-size:1.5rem; margin:10px 0;">★★★★★</p>
+                <p>"Mon sac est magnifique, très solide et élégant. Je l’adore !"</p>
+            </div>
+            <div class="product-card" style="text-align:center; padding:30px 20px;">
+                <h4>Lova</h4>
+                <p style="color:#f5c400; font-size:1.5rem; margin:10px 0;">★★★★★</p>
+                <p>"Le chapeau est parfait pour le soleil. Qualité exceptionnelle !"</p>
+            </div>
+            <div class="product-card" style="text-align:center; padding:30px 20px;">
+                <h4>Mamy</h4>
+                <p style="color:#f5c400; font-size:1.5rem; margin:10px 0;">★★★★★</p>
+                <p>"Accessoires super beaux et bien finis. Livraison rapide."</p>
+            </div>
+            <div class="product-card" style="text-align:center; padding:30px 20px;">
+                <h4>Fara</h4>
+                <p style="color:#f5c400; font-size:1.5rem; margin:10px 0;">★★★★★</p>
+                <p>"Produit artisanal authentique. Je recommande à 100% !"</p>
+            </div>
+            <div class="product-card" style="text-align:center; padding:30px 20px;">
+                <h4>Toky</h4>
+                <p style="color:#f5c400; font-size:1.5rem; margin:10px 0;">★★★★★</p>
+                <p>"Raphia de très bonne qualité, finition impeccable."</p>
+            </div>
+        </div>
+    </section>
+    <!-- === FIN DE LA NOUVELLE SECTION === -->
+
     <!-- SAVOIR-FAIRE -->
     <section id="savoir-faire" class="savoir-faire">
         <h2>Notre Savoir-Faire</h2>
         <div class="two-columns">
             <div class="text-column">
                 <p style="font-size:1.25rem;">
-                    Chaque création <strong>AAZED</strong> est <strong>100% faite main</strong> à Madagascar.
+                    Chaque création <strong>AAZED.</strong> est <strong>100% faite main</strong> à Madagascar.
                 </p>
                 <br>
                 <p style="font-size:1.22rem;">
@@ -490,29 +524,27 @@
 
     <!-- FOOTER -->
     <footer style="background:#0f0f0f; color:#aaa; text-align:center; padding:70px 40px;">
-        <p>&copy; 2026 AAZED - Créations en Raphia Fait Main à Madagascar 🇲🇬</p>
+        <p>&copy; 2026 AAZED. - Créations en Raphia Fait Main à Madagascar 🇲🇬</p>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script>
         const productsData = {
             sacs: [
-                // Anciens produits
-                { id: 1, name: "Sac Filet", description: "Sac filet spacieux avec anses en cuir véritable.", price: "45 000 Ar", mainImage: "sac-1.jpg", extraImages: ["sac-1-cote.jpg", "sac-1-detail.jpg", "sac-1-interieur.jpg"] },
-                { id: 2, name: "Sac Fleur", description: "Modèle floral élégant et raffiné.", price: "52 000 Ar", mainImage: "sacfleur.jpg", extraImages: ["sacfleur-cote.jpg", "sacfleur-detail.jpg"] },
-                { id: 3, name: "Sac Mahajanga", description: "Style traditionnel spacieux et résistant.", price: "48 000 Ar", mainImage: "sac-3.jpg", extraImages: ["sac-3-cote.jpg", "sac-3-detail.jpg"] },
-                { id: 4, name: "Sac Fleur_002", description: "Variante raffinée du sac fleur.", price: "55 000 Ar", mainImage: "sacfleur2.jpg", extraImages: ["sacfleur2-cote.jpg", "sacfleur2-detail.jpg"] },
-                // 10 Nouveaux produits
-                { id: 5, name: "Sac Bohème", description: "Sac bohème chic avec franges naturelles.", price: "52 000 Ar", mainImage: "sac-raphia-05.jpg", extraImages: ["sac-raphia-05-1.jpg", "sac-raphia-05-2.jpg", "sac-raphia-05-3.jpg"] },
-                { id: 6, name: "Sac Tressé Nature", description: "Sac tressé fin avec motif traditionnel.", price: "49 000 Ar", mainImage: "sac-raphia-06.jpg", extraImages: ["sac-raphia-06-1.jpg", "sac-raphia-06-2.jpg"] },
-                { id: 7, name: "Sac Cabas Élégant", description: "Grand cabas élégant pour tous les jours.", price: "58 000 Ar", mainImage: "sac-raphia-07.jpg", extraImages: ["sac-raphia-07-1.jpg", "sac-raphia-07-2.jpg", "sac-raphia-07-3.jpg"] },
-                { id: 8, name: "Sac Weekend Raphia", description: "Sac de weekend spacieux et résistant.", price: "65 000 Ar", mainImage: "sac-raphia-08.jpg", extraImages: ["sac-raphia-08-1.jpg", "sac-raphia-08-2.jpg"] },
-                { id: 9, name: "Sac Bandoulière Fleurie", description: "Sac bandoulière avec motif floral.", price: "47 000 Ar", mainImage: "sac-raphia-09.jpg", extraImages: ["sac-raphia-09-1.jpg", "sac-raphia-09-2.jpg"] },
-                { id: 10, name: "Sac Mini Crocheté", description: "Petit sac crocheté très pratique.", price: "38 000 Ar", mainImage: "sac-raphia-10.jpg", extraImages: ["sac-raphia-10-1.jpg", "sac-raphia-10-2.jpg"] },
-                { id: 11, name: "Sac Shopping Tradition", description: "Sac shopping inspiré des marchés malgaches.", price: "55 000 Ar", mainImage: "sac-raphia-11.jpg", extraImages: ["sac-raphia-11-1.jpg", "sac-raphia-11-2.jpg"] },
-                { id: 12, name: "Sac Pochette Raffinée", description: "Pochette élégante pour occasions spéciales.", price: "42 000 Ar", mainImage: "sac-raphia-12.jpg", extraImages: ["sac-raphia-12-1.jpg", "sac-raphia-12-2.jpg"] },
-                { id: 13, name: "Sac Voyageur", description: "Sac de voyage robuste en raphia épais.", price: "68 000 Ar", mainImage: "sac-raphia-13.jpg", extraImages: ["sac-raphia-13-1.jpg", "sac-raphia-13-2.jpg", "sac-raphia-13-3.jpg"] },
-                { id: 14, name: "Sac Anses Cuir Nature", description: "Sac avec belles anses en cuir naturel.", price: "59 000 Ar", mainImage: "sac-raphia-14.jpg", extraImages: ["sac-raphia-14-1.jpg", "sac-raphia-14-2.jpg"] }
+                { id: 1, name: "Sac Filet", description: "Sac filet spacieux avec anses en cuir véritable.", price: "45 000 Ar", mainImage: "sac-1.jpeg", extraImages: ["sac-1-cote.jpeg", "sac-1-detail.jpeg", "sac-1-interieur.jpeg"] },
+                { id: 2, name: "Sac Fleur", description: "Modèle floral élégant et raffiné.", price: "52 000 Ar", mainImage: "sacfleur.jpeg", extraImages: ["sacfleur-cote.jpeg", "sacfleur-detail.jpeg"] },
+                { id: 3, name: "Sac Mahajanga", description: "Style traditionnel spacieux et résistant.", price: "48 000 Ar", mainImage: "sac-3.jpeg", extraImages: ["sac-3-cote.jpeg", "sac-3-detail.jpeg"] },
+                { id: 4, name: "Sac Fleur_002", description: "Variante raffinée du sac fleur.", price: "55 000 Ar", mainImage: "sacfleur2.jpeg", extraImages: ["sacfleur2-cote.jpeg", "sacfleur2-detail.jpeg"] },
+                { id: 5, name: "Sac Bohème", description: "Sac bohème chic avec franges naturelles.", price: "52 000 Ar", mainImage: "sac-raphia-05.jpeg", extraImages: ["sac-raphia-05-1.jpeg", "sac-raphia-05-2.jpeg", "sac-raphia-05-3.jpeg"] },
+                { id: 6, name: "Sac Tressé Nature", description: "Sac tressé fin avec motif traditionnel.", price: "49 000 Ar", mainImage: "sac-raphia-06.jpeg", extraImages: ["sac-raphia-06-1.jpeg", "sac-raphia-06-2.jpeg"] },
+                { id: 7, name: "Sac Cabas Élégant", description: "Grand cabas élégant pour tous les jours.", price: "58 000 Ar", mainImage: "sac-raphia-07.jpeg", extraImages: ["sac-raphia-07-1.jpeg", "sac-raphia-07-2.jpeg", "sac-raphia-07-3.jpeg"] },
+                { id: 8, name: "Sac Weekend Raphia", description: "Sac de weekend spacieux et résistant.", price: "65 000 Ar", mainImage: "sac-raphia-08.jpeg", extraImages: ["sac-raphia-08-1.jpeg", "sac-raphia-08-2.jpeg"] },
+                { id: 9, name: "Sac Bandoulière Fleurie", description: "Sac bandoulière avec motif floral.", price: "47 000 Ar", mainImage: "sac-raphia-09.jpeg", extraImages: ["sac-raphia-09-1.jpeg", "sac-raphia-09-2.jpeg"] },
+                { id: 10, name: "Sac Mini Crocheté", description: "Petit sac crocheté très pratique.", price: "38 000 Ar", mainImage: "sac-raphia-10.jpeg", extraImages: ["sac-raphia-10-1.jpeg", "sac-raphia-10-2.jpeg"] },
+                { id: 11, name: "Sac Shopping Tradition", description: "Sac shopping inspiré des marchés malgaches.", price: "55 000 Ar", mainImage: "sac-raphia-11.jpeg", extraImages: ["sac-raphia-11-1.jpeg", "sac-raphia-11-2.jpeg"] },
+                { id: 12, name: "Sac Pochette Raffinée", description: "Pochette élégante pour occasions spéciales.", price: "42 000 Ar", mainImage: "sac-raphia-12.jpeg", extraImages: ["sac-raphia-12-1.jpeg", "sac-raphia-12-2.jpeg"] },
+                { id: 13, name: "Sac Voyageur", description: "Sac de voyage robuste en raphia épais.", price: "68 000 Ar", mainImage: "sac-raphia-13.jpeg", extraImages: ["sac-raphia-13-1.jpeg", "sac-raphia-13-2.jpeg", "sac-raphia-13-3.jpeg"] },
+                { id: 14, name: "Sac Anses Cuir Nature", description: "Sac avec belles anses en cuir naturel.", price: "59 000 Ar", mainImage: "sac-raphia-14.jpeg", extraImages: ["sac-raphia-14-1.jpeg", "sac-raphia-14-2.jpeg"] }
             ],
             chapeaux: [
                 { id: 1, name: "Chapeau Soleil", description: "Chapeau large pour une protection solaire optimale.", price: "28 000 Ar", mainImage: "modi.jpeg", extraImages: ["modi-cote.jpeg", "modi-detail.jpeg"] },
