@@ -13,7 +13,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.85;
+            line-height: 1.8;
             color: #333;
             background: #fff;
             scroll-behavior: smooth;
@@ -22,40 +22,38 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255,255,255,0.96);
+            background: rgba(255,255,255,0.95);
             border-bottom: 1px solid #eee;
             z-index: 1000;
         }
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 40px;
+            padding: 18px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         .logo {
-            font-size: 29px;
+            font-size: 28px;
             font-weight: 700;
-            letter-spacing: 3.5px;
+            letter-spacing: 3px;
             color: var(--marron);
         }
         .menu {
             display: flex;
-            gap: 38px;
+            gap: 35px;
             list-style: none;
         }
         .menu a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
-            transition: color 0.3s ease;
         }
         .menu a:hover { color: var(--vert); }
-
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)), url('pdc.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)), url('pdc.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -63,20 +61,19 @@
             color: white;
         }
         .hero-content h1 {
-            font-size: 4.6rem;
-            margin-bottom: 22px;
-            text-shadow: 0 3px 12px rgba(0,0,0,0.75);
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
         }
         .hero-content p {
-            font-size: 1.7rem;
-            max-width: 740px;
-            margin: 0 auto 45px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.65);
+            font-size: 1.65rem;
+            max-width: 720px;
+            margin: 0 auto 40px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
         }
-
         .btn {
             display: inline-block;
-            padding: 15px 38px;
+            padding: 14px 36px;
             background: var(--marron);
             color: white;
             text-decoration: none;
@@ -86,265 +83,276 @@
         }
         .btn:hover {
             background: #3f2a20;
-            transform: translateY(-4px);
+            transform: translateY(-3px);
         }
-
         section {
-            padding: 115px 40px;
+            padding: 100px 40px;
             max-width: 1200px;
             margin: 0 auto;
         }
-
         h2 {
-            font-size: 2.85rem;
+            font-size: 2.8rem;
             text-align: center;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             color: var(--marron);
-            font-weight: 700;
         }
         .subtitle {
             text-align: center;
-            font-size: 1.28rem;
-            color: #555;
-            max-width: 720px;
-            margin: 0 auto 75px;
-            line-height: 1.65;
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.6;
         }
-
+        /* === SECTION À PROPOS === */
         .two-columns {
             display: flex;
             align-items: center;
-            gap: 85px;
+            gap: 80px;
             flex-wrap: wrap;
         }
         .text-column { flex: 1; min-width: 300px; }
-        .image-column { 
-            flex: 1; 
-            min-width: 300px; 
+        .image-column {
+            flex: 1;
+            min-width: 300px;
             position: relative;
-            height: 420px; /* Hauteur fixe pour le conteneur d'images */
+            height: 420px;
         }
         .about-image {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             object-fit: cover;
-            border-radius: 14px;
-            box-shadow: 0 18px 45px rgba(0,0,0,0.16);
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
             opacity: 0;
             transition: opacity 1.2s ease;
         }
-        .about-image.active {
-            opacity: 1;
+        .about-image.active { opacity: 1; }
+
+        /* === IMAGES PRODUITS UNIQUEMENT EN CARRÉ (strictement isolé) === */
+        .product-card img,
+        .model-card img,
+        .main-image img,
+        .thumbnails img {
+            width: 100% !important;
+            height: 280px !important;
+            object-fit: cover !important;
+            object-position: center !important;
+        }
+        .thumbnails img {
+            height: 80px !important;
+            width: 80px !important;
+        }
+
+        /* === SAVOIR-FAIRE - Vidéo avec bouton son fonctionnel === */
+        #savoir-faire .two-columns {
+            overflow: hidden;
+        }
+        #savoir-faire .image-column {
+            overflow: hidden;
+            border-radius: 12px;
+            position: relative;
+        }
+        #savoir-faire .image-column video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+        #savoir-faire .sound-btn {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+        }
+        #savoir-faire .sound-btn:hover {
+            background: rgba(0,0,0,0.9);
+        }
+
+        /* === CONTACT - Protégé === */
+        #contact img {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            display: block !important;
         }
 
         .products-grid, .models-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-            gap: 38px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
             margin-top: 40px;
         }
         .product-card, .model-card {
             background: white;
-            border-radius: 14px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 6px 22px rgba(0,0,0,0.09);
-            transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
             cursor: pointer;
         }
         .product-card:hover, .model-card:hover {
-            transform: translateY(-14px);
-            box-shadow: 0 28px 55px rgba(0,0,0,0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
-        .product-card img, .model-card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-
         .product-info, .model-info {
-            padding: 24px;
+            padding: 20px;
             text-align: center;
         }
         .product-info h3, .model-info h4 {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--marron);
         }
-
         .category-section {
             background: var(--beige);
         }
-
         .product-detail {
             display: none;
             background: #fff;
-            border-radius: 18px;
-            padding: 45px 35px;
-            box-shadow: 0 12px 45px rgba(0,0,0,0.12);
-            margin-top: 70px;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-top: 60px;
         }
         .product-detail.active {
             display: block;
         }
-
         .product-detail .back-btn {
             background: var(--marron);
             color: white;
-            padding: 11px 26px;
+            padding: 10px 24px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             font-weight: 600;
         }
-
         .detail-content {
             display: flex;
-            gap: 55px;
+            gap: 50px;
             flex-wrap: wrap;
         }
         .main-image {
             flex: 1;
-            min-width: 320px;
+            min-width: 300px;
         }
         .main-image img {
             width: 100%;
-            border-radius: 14px;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
-
         .thumbnails {
             display: flex;
-            gap: 14px;
+            gap: 12px;
             flex-wrap: wrap;
-            margin-top: 22px;
+            margin-top: 20px;
         }
         .thumbnails img {
-            width: 82px;
-            height: 82px;
+            width: 80px;
+            height: 80px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
             border: 3px solid transparent;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
         .thumbnails img.active {
             border-color: var(--vert);
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
-
         .product-info-detail {
             flex: 1;
             min-width: 300px;
         }
         .product-info-detail h3 {
-            font-size: 2.1rem;
+            font-size: 2rem;
             color: var(--marron);
-            margin-bottom: 16px;
+            margin-bottom: 15px;
         }
         .price {
-            font-size: 1.85rem;
+            font-size: 1.8rem;
             color: var(--vert);
             font-weight: bold;
-            margin: 22px 0;
+            margin: 20px 0;
         }
-
-        .reviews-grid {
+        .avis-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 32px;
-            margin-top: 45px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
-        .review-card {
+        .avis-card {
             background: white;
-            padding: 32px;
-            border-radius: 14px;
-            box-shadow: 0 6px 24px rgba(0,0,0,0.09);
-            transition: all 0.4s ease;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
-        .review-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 22px 45px rgba(0,0,0,0.14);
-        }
-        .stars {
-            color: #f5c400;
-            font-size: 1.65rem;
-            margin-bottom: 16px;
-        }
-
         .contact-buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 22px;
-            margin-top: 45px;
+            gap: 20px;
+            margin-top: 40px;
         }
         .contact-btn {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 16px 36px;
+            padding: 16px 34px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.08rem;
             transition: all 0.4s;
         }
         .whatsapp-btn { background: #25D366; color: white; }
         .whatsapp-btn:hover { background: #20b95a; transform: translateY(-4px); }
         .call-btn { background: #007AFF; color: white; }
         .call-btn:hover { background: #0066d6; transform: translateY(-4px); }
-
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
             right: 25px;
             background: #25D366;
             color: white;
-            width: 68px;
-            height: 68px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 34px;
-            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+            font-size: 32px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
             z-index: 9999;
             transition: all 0.3s;
         }
-        .whatsapp-float:hover { transform: scale(1.12); }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 105px;
-            right: 25px;
-            background: var(--marron);
-            color: white;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-            z-index: 9998;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .back-to-top:hover { transform: scale(1.12); }
+        .whatsapp-float:hover { transform: scale(1.15); }
 
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 3.3rem; }
-            .hero-content p { font-size: 1.45rem; }
-            section { padding: 95px 20px; }
+            .hero-content h1 { font-size: 3.2rem; }
+            .hero-content p { font-size: 1.4rem; }
+            section { padding: 80px 20px; }
             nav { padding: 18px 20px; }
-            .menu { gap: 22px; font-size: 0.96rem; }
-            .detail-content { gap: 32px; }
-            .product-card img, .model-card img { height: 245px; }
-            .image-column { height: 320px; }
+            .menu { gap: 20px; font-size: 0.95rem; }
+            .detail-content { gap: 30px; }
+            .thumbnails { justify-content: center; }
+            .product-card img, .model-card img {
+                height: 220px !important;
+            }
+            .two-columns {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -374,7 +382,7 @@
         </div>
     </section>
 
-    <!-- À PROPOS - Image switch ajoutée ici -->
+    <!-- À PROPOS -->
     <section id="a-propos" class="about">
         <h2>AAZED. – L’Art du Raphia Malgache</h2>
         <div class="two-columns">
@@ -390,10 +398,8 @@
                 </p>
             </div>
             <div class="image-column">
-                <!-- Image 1 (originale) -->
-                <img src="artisan.jpg" alt="Artisan malgache travaillant le raphia" class="about-image active" id="about-img1">
-                <!-- Image 2 (nouvelle) - cachée au départ -->
-                <img src="artisan2.jpg" alt="Artisan malgache travaillant le raphia" class="about-image" id="about-img2">
+                <img src="artisan.jpg" alt="Artisan malgache travaillant le raphia" class="about-image active" id="about-img1" loading="lazy">
+                <img src="artisan2.jpg" alt="Artisan malgache travaillant le raphia" class="about-image" id="about-img2" loading="lazy">
             </div>
         </div>
     </section>
@@ -402,7 +408,6 @@
     <section id="produits">
         <h2>Nos Créations</h2>
         <p class="subtitle">Découvrez nos pièces uniques, entièrement faites main avec du raphia naturel de Madagascar</p>
-     
         <div class="products-grid">
             <div class="product-card">
                 <img src="sac1.jpg" alt="Sacs en raphia" loading="lazy">
@@ -454,8 +459,6 @@
         </div>
     </section>
 
-    <!-- CHAPEAUX, ACCESSOIRES, AVIS, SAVOIR-FAIRE, CONTACT restent identiques -->
-
     <!-- CHAPEAUX ARTISANAUX -->
     <section id="chapeaux" class="category-section">
         <h2>Chapeaux Artisanaux</h2>
@@ -506,36 +509,36 @@
     <section id="avis" class="category-section" style="background: var(--beige);">
         <h2>Avis Clients</h2>
         <p class="subtitle">Ce que nos clients disent de nos créations en raphia</p>
-        <div class="reviews-grid">
-            <div class="review-card">
+        <div class="products-grid">
+            <div class="product-card" style="text-align:center; padding:30px 20px;">
                 <h4>Rabea</h4>
-                <p class="stars">★★★★★</p>
+                <p style="color:#f5c400; font-size:1.5rem; margin:10px 0;">★★★★★</p>
                 <p>"Mon sac est magnifique, très solide et élégant. Je l’adore !"</p>
             </div>
-            <div class="review-card">
+            <div class="product-card" style="text-align:center; padding:30px 20px;">
                 <h4>Lova</h4>
-                <p class="stars">★★★★★</p>
+                <p style="color:#f5c400; font-size:1.5rem; margin:10px 0;">★★★★★</p>
                 <p>"Le chapeau est parfait pour le soleil. Qualité exceptionnelle !"</p>
             </div>
-            <div class="review-card">
+            <div class="product-card" style="text-align:center; padding:30px 20px;">
                 <h4>Mamy</h4>
-                <p class="stars">★★★★★</p>
+                <p style="color:#f5c400; font-size:1.5rem; margin:10px 0;">★★★★★</p>
                 <p>"Accessoires super beaux et bien finis. Livraison rapide."</p>
             </div>
-            <div class="review-card">
+            <div class="product-card" style="text-align:center; padding:30px 20px;">
                 <h4>Fara</h4>
-                <p class="stars">★★★★★</p>
+                <p style="color:#f5c400; font-size:1.5rem; margin:10px 0;">★★★★★</p>
                 <p>"Produit artisanal authentique. Je recommande à 100% !"</p>
             </div>
-            <div class="review-card">
+            <div class="product-card" style="text-align:center; padding:30px 20px;">
                 <h4>Toky</h4>
-                <p class="stars">★★★★★</p>
+                <p style="color:#f5c400; font-size:1.5rem; margin:10px 0;">★★★★★</p>
                 <p>"Raphia de très bonne qualité, finition impeccable."</p>
             </div>
         </div>
     </section>
 
-    <!-- SAVOIR-FAIRE -->
+    <!-- SAVOIR-FAIRE - Vidéo avec bouton son fonctionnel -->
     <section id="savoir-faire" class="savoir-faire">
         <h2>Notre Savoir-Faire</h2>
         <div class="two-columns">
@@ -550,7 +553,11 @@
                 </p>
             </div>
             <div class="image-column">
-                <img src="processus.jpg" alt="Processus artisanal de fabrication du raphia" loading="lazy">
+                <video id="savoir-faire-video" autoplay muted loop playsinline>
+                    <source src="processus.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de la vidéo.
+                </video>
+                <button id="sound-btn" class="sound-btn">🔊 Activer le son</button>
             </div>
         </div>
     </section>
@@ -588,9 +595,6 @@
         💬
     </a>
 
-    <!-- Bouton Retour en haut -->
-    <div class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</div>
-
     <!-- FOOTER -->
     <footer style="background:#0f0f0f; color:#aaa; text-align:center; padding:70px 40px;">
         <p>&copy; 2026 AAZED. - Créations en Raphia Fait Main à Madagascar 🇲🇬</p>
@@ -598,55 +602,33 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // === Script pour alterner les images dans la section À propos ===
-        function switchAboutImages() {
-            const img1 = document.getElementById('about-img1');
-            const img2 = document.getElementById('about-img2');
-            
-            let current = 1;
-            
-            setInterval(() => {
-                if (current === 1) {
-                    img1.classList.remove('active');
-                    img2.classList.add('active');
-                    current = 2;
-                } else {
-                    img2.classList.remove('active');
-                    img1.classList.add('active');
-                    current = 1;
-                }
-            }, 4000); // Change toutes les 4 secondes
-        }
-
-        // Initialisation
-        window.onload = () => {
-            // Affichage initial : Image 1 visible
-            document.getElementById('about-img1').classList.add('active');
-            
-            // Lancement du switch automatique
-            switchAboutImages();
-
-            // Rendu des produits (inchangé)
-            renderProducts('sacs');
-            renderProducts('chapeaux');
-            renderProducts('accessoires');
-
-            // Bouton retour en haut
-            const backToTop = document.querySelector('.back-to-top');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 500) {
-                    backToTop.style.display = 'flex';
-                } else {
-                    backToTop.style.display = 'none';
-                }
-            });
-        };
-
-        // Fonctions produits (inchangées)
         const productsData = {
-            sacs: [ /* ... tes 14 produits identiques ... */ ],
-            chapeaux: [ /* ... */ ],
-            accessoires: [ /* ... */ ]
+            sacs: [
+                { id: 1, name: "Élégance Raphia", description: "Ce sac à main en raphia tressé naturel allie une forme structurée et un fermoir métallique doré pour un look chic et intemporel. Parfait pour le quotidien ou une sortie élégante, il offre un style raffiné tout en restant léger et résistant.", price: "45 000 Ar", mainImage: "sac-1.jpeg", extraImages: ["sac-1-cote.jpeg", "sac-1-detail.jpeg", "sac-1-interieur.jpeg"] },
+                { id: 2, name: "Sac Floraison Rouge", description: "Sac cabas élégant en raphia rouge orné d’une délicate broderie florale beige. Parfait pour un look chic et artisanal au quotidien.", price: "52 000 Ar", mainImage: "sacfleur.jpeg", extraImages: ["sacfleur-cote.jpeg", "sacfleur-detail.jpeg"] },
+                { id: 3, name: "Sac Ajouré Bohème", description: "Sac en raphia beige au tissage ajouré délicat, agrémenté d’anses en cuir. Pièce légère et aérienne au style bohème raffiné.", price: "48 000 Ar", mainImage: "sac-3.jpeg", extraImages: ["sac-3-cote.jpeg", "sac-3-detail.jpeg"] },
+                { id: 4, name: "Sac Jardin Multicolore", description: "Sac joyeux et coloré entièrement orné de fleurs en raphia tressé. Une pièce unique et pleine de vie, parfaite pour apporter de la couleur à vos tenues.", price: "55 000 Ar", mainImage: "sacfleur2.jpeg", extraImages: ["sacfleur2-cote.jpeg", "sacfleur2-detail.jpeg"] },
+                { id: 5, name: "Sac Nomade Cuir", description: "Sac rectangulaire en raphia naturel avec belles anses en cuir et finitions métalliques. Idéal pour un usage quotidien élégant et résistant.", price: "52 000 Ar", mainImage: "sac-raphia-05.jpeg", extraImages: ["sac-raphia-05-1.jpeg", "sac-raphia-05-2.jpeg", "sac-raphia-05-3.jpeg"] },
+                { id: 6, name: "Jardin Arc-en-Ciel", description: "Ce sac cabas en raphia est sublimé par un abondant jardin de fleurs 3D aux couleurs vives et joyeuses. Un modèle bohème et lumineux qui apporte instantanément de la gaieté et de la fantaisie à vos tenues.", price: "49 000 Ar", mainImage: "sac-raphia-06.jpeg", extraImages: ["sac-raphia-06-1.jpeg", "sac-raphia-06-2.jpeg"] },
+                { id: 7, name: "Sac Seau Nature", description: "Sac seau en raphia beige clair avec une belle anse en cuir. Style minimaliste et très pratique pour transporter vos essentiels avec élégance.", price: "58 000 Ar", mainImage: "sac-raphia-07.jpeg", extraImages: ["sac-raphia-07-1.jpeg", "sac-raphia-07-2.jpeg", "sac-raphia-07-3.jpeg"] },
+                { id: 8, name: "Cabas Ambre Cuir", description: "Ce sac cabas en raphia ambré est rehaussé d’une belle anse en cuir et d’une bride centrale élégante. Pièce structurée et raffinée, idéale pour un usage quotidien chic et pratique.", price: "65 000 Ar", mainImage: "sac-raphia-08.jpeg", extraImages: ["sac-raphia-08-1.jpeg", "sac-raphia-08-2.jpeg"] },
+                { id: 9, name: "Tresse Bohème", description: "Ce sac cabas en raphia naturel met en valeur de magnifiques anses tressées en deux tons beige et brun. Son design structuré et artisanal apporte une touche bohème élégante et intemporelle au quotidien.", price: "47 000 Ar", mainImage: "sac-raphia-09.jpeg", extraImages: ["sac-raphia-09-1.jpeg", "sac-raphia-09-2.jpeg"] },
+                { id: 10, name: "Sac Mini Crocheté", description: "Petit sac crocheté très pratique.", price: "38 000 Ar", mainImage: "sac-raphia-10.jpeg", extraImages: ["sac-raphia-10-1.jpeg", "sac-raphia-10-2.jpeg"] },
+                { id: 11, name: "Sac Shopping Tradition", description: "Sac shopping inspiré des marchés malgaches.", price: "55 000 Ar", mainImage: "sac-raphia-11.jpeg", extraImages: ["sac-raphia-11-1.jpeg", "sac-raphia-11-2.jpeg"] },
+                { id: 12, name: "Sac Pochette Raffinée", description: "Pochette élégante pour occasions spéciales.", price: "42 000 Ar", mainImage: "sac-raphia-12.jpeg", extraImages: ["sac-raphia-12-1.jpeg", "sac-raphia-12-2.jpeg"] },
+                { id: 13, name: "Sac Voyageur", description: "Sac de voyage robuste en raphia épais.", price: "68 000 Ar", mainImage: "sac-raphia-13.jpeg", extraImages: ["sac-raphia-13-1.jpeg", "sac-raphia-13-2.jpeg", "sac-raphia-13-3.jpeg"] },
+                { id: 14, name: "Sac Anses Cuir Nature", description: "Sac avec belles anses en cuir naturel.", price: "59 000 Ar", mainImage: "sac-raphia-14.jpeg", extraImages: ["sac-raphia-14-1.jpeg", "sac-raphia-14-2.jpeg"] }
+            ],
+            chapeaux: [
+                { id: 1, name: "Chapeau Soleil", description: "Chapeau large pour une protection solaire optimale.", price: "28 000 Ar", mainImage: "modi.jpeg", extraImages: ["modi-cote.jpeg", "modi-detail.jpeg"] },
+                { id: 2, name: "Chapeau Fedora", description: "Style élégant et intemporel.", price: "32 000 Ar", mainImage: "chapeau-2.jpg", extraImages: ["chapeau-2-cote.jpg", "chapeau-2-detail.jpg"] },
+                { id: 3, name: "Chapeau Panama", description: "Chapeau léger et respirant.", price: "35 000 Ar", mainImage: "chapeau-3.jpg", extraImages: ["chapeau-3-cote.jpg", "chapeau-3-detail.jpg"] }
+            ],
+            accessoires: [
+                { id: 1, name: "Trousse Nomade", description: "Trousse pratique et élégante.", price: "18 000 Ar", mainImage: "accessoire-1.jpg", extraImages: ["accessoire-1-detail.jpg", "accessoire-1-cote.jpg"] },
+                { id: 2, name: "Portefeuille", description: "Portefeuille compact en raphia.", price: "15 000 Ar", mainImage: "accessoire-2.jpg", extraImages: ["accessoire-2-interieur.jpg", "accessoire-2-detail.jpg"] },
+                { id: 3, name: "Ceinture Tressée", description: "Ceinture tressée artisanale.", price: "22 000 Ar", mainImage: "accessoire-3.jpg", extraImages: ["accessoire-3-detail.jpg", "accessoire-3-cote.jpg"] }
+            ]
         };
 
         function renderProducts(category) {
@@ -670,16 +652,13 @@
         function showProduct(category, id) {
             const product = productsData[category].find(p => p.id === id);
             if (!product) return;
-
             document.getElementById(category + '-grid').style.display = 'none';
             const detail = document.getElementById(category + '-detail');
             detail.classList.add('active');
-
             document.getElementById(category + '-name').textContent = product.name;
             document.getElementById(category + '-description').textContent = product.description;
             document.getElementById(category + '-price').textContent = product.price;
             document.getElementById(category + '-main-image').src = product.mainImage;
-
             const thumbsContainer = document.getElementById(category + '-thumbnails');
             thumbsContainer.innerHTML = '';
             [product.mainImage, ...product.extraImages].forEach((src, index) => {
@@ -699,6 +678,50 @@
             document.getElementById(category + '-grid').style.display = 'grid';
             document.getElementById(category + '-detail').classList.remove('active');
         }
+
+        function initAboutImageSwitch() {
+            const img1 = document.getElementById('about-img1');
+            const img2 = document.getElementById('about-img2');
+            if (!img1 || !img2) return;
+            let current = 1;
+            setInterval(() => {
+                if (current === 1) {
+                    img1.classList.remove('active');
+                    img2.classList.add('active');
+                    current = 2;
+                } else {
+                    img2.classList.remove('active');
+                    img1.classList.add('active');
+                    current = 1;
+                }
+            }, 4000);
+        }
+
+        window.onload = () => {
+            const img1 = document.getElementById('about-img1');
+            if (img1) img1.classList.add('active');
+            initAboutImageSwitch();
+
+            // Gestion du bouton son pour la vidéo Savoir-faire
+            const video = document.getElementById('savoir-faire-video');
+            const soundBtn = document.getElementById('sound-btn');
+
+            if (video && soundBtn) {
+                soundBtn.addEventListener('click', () => {
+                    if (video.muted) {
+                        video.muted = false;
+                        soundBtn.textContent = '🔇 Couper le son';
+                    } else {
+                        video.muted = true;
+                        soundBtn.textContent = '🔊 Activer le son';
+                    }
+                });
+            }
+
+            renderProducts('sacs');
+            renderProducts('chapeaux');
+            renderProducts('accessoires');
+        };
     </script>
 </body>
 </html>
